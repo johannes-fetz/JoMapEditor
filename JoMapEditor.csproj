@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9894D864-A624-486D-81D9-570B69A46009}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JoMapEditor</RootNamespace>
+    <AssemblyName>JoMapEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sega_saturn_32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>JoMapEditor.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>.\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Parsers\Collada.cs" />
+    <Compile Include="Forms\ColladaImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ColladaImportForm.Designer.cs">
+      <DependentUpon>ColladaImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor.Designer.cs">
+      <DependentUpon>Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Miscs\IniConfigFile.cs" />
+    <Compile Include="Miscs\JoMapEditorTools.cs" />
+    <Compile Include="Controls\MapViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MapViewer.Designer.cs">
+      <DependentUpon>MapViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapViewerPartialExplodeTile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MapViewerPartialExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MapViewerPartialLoadSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MapViewerPartialPicking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MapViewerPartialUndoRedo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parsers\Obj.cs" />
+    <Compile Include="Forms\ObjImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObjImportForm.designer.cs">
+      <DependentUpon>ObjImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SegaSaturn\SegaSaturnAttribute.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnColor.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnConverter.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnGraphic.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnNormal.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnPoint.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnPolygon.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnPolygonData.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnTexture.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnTextureCoordinates.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnTextureVerticesIndexes.cs" />
+    <Compile Include="SegaSaturn\SegaSaturnVertices.cs" />
+    <Compile Include="Controls\SelectablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Miscs\Sprite.cs" />
+    <Compile Include="Controls\ToolBox\SpriteToolBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolBox\SpriteToolBox.Designer.cs">
+      <DependentUpon>SpriteToolBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Miscs\TgaWriter.cs" />
+    <Compile Include="Controls\Tile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolBox\TilePropertiesToolBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolBox\TilePropertiesToolBox.Designer.cs">
+      <DependentUpon>TilePropertiesToolBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TileSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TileSizeForm.Designer.cs">
+      <DependentUpon>TileSizeForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\ColladaImportForm.resx">
+      <DependentUpon>ColladaImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor.resx">
+      <DependentUpon>Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapViewer.resx">
+      <DependentUpon>MapViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObjImportForm.resx">
+      <DependentUpon>ObjImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBox\SpriteToolBox.resx">
+      <DependentUpon>SpriteToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBox\TilePropertiesToolBox.resx">
+      <DependentUpon>TilePropertiesToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TileSizeForm.resx">
+      <DependentUpon>TileSizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status-folder-open-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sega_saturn_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c_lg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tga.gif" />
+    <None Include="Resources\fav.png" />
+    <None Include="Resources\select-all.gif" />
+    <None Include="Resources\script-binary-icon.png" />
+    <None Include="Resources\color swatch.png" />
+    <None Include="Resources\saturn screen2.png" />
+    <None Include="Resources\property.png" />
+    <None Include="Resources\cube_tool_icon.png" />
+    <None Include="Resources\collada.png" />
+    <None Include="Resources\wavefront.jpg" />
+    <None Include="Resources\tiles.bmp" />
+    <None Include="Resources\grid.png" />
+    <None Include="Resources\explode.png" />
+    <None Include="Resources\paste.gif" />
+    <None Include="Resources\cut.gif" />
+    <None Include="Resources\copy.gif" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\SegaSaturnLogo.png" />
+    <None Include="Resources\exitApplication.png" />
+    <None Include="Resources\tileset.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\imageFolder.png" />
+    <Content Include="sega_saturn_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Paloma\Paloma.csproj">
+      <Project>{0519389D-9D08-4A4A-AD2E-FF1F60259ABF}</Project>
+      <Name>Paloma</Name>
+    </ProjectReference>
+    <ProjectReference Include="Silver.UI.ToolBox\Silver.UI.csproj">
+      <Project>{AABC2F39-4EA0-4414-91BC-A99A374B168B}</Project>
+      <Name>Silver.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
